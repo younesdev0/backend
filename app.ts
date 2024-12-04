@@ -18,6 +18,14 @@ app.use(routes);
 
 const PORT = process.env.PORT || 8000;
 
+
+// SAY Hello 
+app.get("/", (req, res) => {
+    res.json({
+        message: "Welcome to Assistant API"
+    })
+})
+
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
