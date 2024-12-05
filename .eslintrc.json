@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "vue"
+  ],
+  "rules": {
+    "vue/html-indent": ["error", 2],
+    "vue/max-attributes-per-line": ["error", { "singleline": 3 }],
+    "vue/singleline-html-element-content-newline": "off",
+    "vue/multiline-html-element-content-newline": "off",
+    "vue/no-unused-vars": "warn",
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "no-debugger": "warn"
+  }
+}

@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "ts-node seed.ts",
     "build": "tsc",
-    "start": "npx ts-node app.ts"
+    "start": "npx ts-node app.ts",
+    "lint": "eslint . --ext .js,.vue"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,8 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "eslint-plugin-vue": "^9.32.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }
