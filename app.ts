@@ -10,29 +10,22 @@ import bodyParser from "body-parser";
 dotenv.config();
 
 const app = express();
-
-const corsOptions = {
-  origin: 'https://backend-gamma-five-74.vercel.app',
-  optionsSuccessStatus: 200
-};
-
-
-app.use(cors(corsOptions));
-
+app.use(cors());
 app.use(bodyParser.json()); 
-
 app.use(express.json());
-app.use(routes);
+
 
 const PORT = process.env.PORT || 8000;
 
 
 // SAY Hello 
 app.get("/", (req, res) => {
-    res.json({
+  res.json({
         message: "Welcome to Assistant API"
+      })
     })
-})
+    
+app.use(routes);
 
 connectDB().then(() => {
   app.listen(PORT, () => {

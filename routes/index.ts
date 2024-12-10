@@ -1,4 +1,4 @@
-// src/routes/index.ts
+
 import { Router } from "express";
 
 import analyticsRoutes from "./analytics";
