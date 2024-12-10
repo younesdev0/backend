@@ -7,25 +7,21 @@ const router = Router();
 
 router.get("/total_sales", async (req: Request, res: Response) => {
 
-    const { startDate, endDate } = req.query;
+    // const { startDate, endDate } = req.query;
   
     try {
-      const sales = await Sale.find({
-        Date: {
-          $gte: startDate ? new Date(startDate as string) : new Date(0),
-          $lte: endDate ? new Date(endDate as string) : new Date(),
-        },
-      });
-  
-      const totalSales = sales.reduce((sum, sale) => sum + sale.TotalAmount, 0);
-      res.json({ totalSales });
+      const sales = await Sale.find();
+
+      console.log("sales :",sales);
+      
+      res.json(sales);
     } catch (error) {
-      res.status(500).json({ message: "Error fetching total sales", error });
+      res.status(500).json({ message: "Error fetching sales data", error });
     }
-  });
+  }); 
   
 
-  router.get("/trending_products", async (req: Request, res: Response) => {
+router.get("/trending_products", async (req: Request, res: Response) => {
     try {
       // Aggregating data in one query
       const result = await Sale.aggregate([
